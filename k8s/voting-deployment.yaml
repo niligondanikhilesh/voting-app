@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voting
+  template:
+    metadata:
+      labels:
+        app: voting
+    spec:
+      containers:
+      - name: voting
+        image: niknilig/voting-app
+        ports:
+        - containerPort: 5000

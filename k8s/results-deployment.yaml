@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: results
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: results
+  template:
+    metadata:
+      labels:
+        app: results
+    spec:
+      containers:
+      - name: results
+        image: niknilig/results-app
+        ports:
+        - containerPort: 5001

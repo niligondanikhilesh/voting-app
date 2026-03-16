@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: results
+spec:
+  selector:
+    app: results
+  type: ClusterIP
+  ports:
+    - port: 5001
+      targetPort: 5001
